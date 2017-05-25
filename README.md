@@ -5,7 +5,7 @@ This library should be considered alpha and could change at any time. It is reco
 ## Installation
 
 ```
-composer require thegallagher/gofetch:dev-master@dev
+composer require thegallagher/gofetch-api:dev-master@dev
 ```
 
 ## Usage Examples
