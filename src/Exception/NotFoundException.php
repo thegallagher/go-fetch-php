@@ -7,14 +7,14 @@ namespace TheGallagher\GoFetch\Exception;
  */
 class NotFoundException extends RequestException
 {
-  /**
-   * NotFoundException constructor.
-   *
-   * @param string $message
-   * @param \Exception|null $previous
-   */
-  public function __construct($message = 'Not Found', \Exception $previous = null)
-  {
-    parent::__construct($message, 404, $previous);
-  }
+    /**
+     * NotFoundException constructor.
+     *
+     * @param string $message
+     * @param \Exception|null $previous
+     */
+    public function __construct($message = 'Not Found', \Exception $previous = null)
+    {
+        parent::__construct($message, 404, $previous);
+    }
 }
