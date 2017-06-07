@@ -212,6 +212,16 @@ class RequestFactory
      *
      * @param array $query
      *
+     * Query options:
+     *   'distance_meters': required
+     *   'lat': required or 'suburb' and 'postcode'
+     *   'lon': required or 'suburb' and 'postcode'
+     *   'suburb': required or 'lat' and 'lon'
+     *   'postcode': required or 'lat' and 'lon'
+     *   'item_weight': required or 'item_type_id'
+     *   'item_type_id': required or 'item_weight'
+     *   'delivery_by': optional, undocumented, format: Y-m-d H:i:s P
+     *
      * @return RequestInterface
      *
      * @see https://github.com/GoFetchDeliveries/gofetch-api/blob/master/v2/jobs.md
