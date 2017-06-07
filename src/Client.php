@@ -106,7 +106,18 @@ class Client
         }
 
         $body = $this->prepareResponse($e->getResponse());
-        $message = $body->error ?? $e->getMessage();
+
+        if (isset($body->error)) {
+            $message = $body->error;
+        } elseif (isset($body->errors)) {
+            $message = $body->errors;
+        } else {
+            $message = $e->getMessage();
+        }
+
+        if (is_array($message)) {
+            $message = implode('; ', $message);
+        }
 
         switch ($e->getCode()) {
             case 401:
