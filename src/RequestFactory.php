@@ -218,7 +218,8 @@ class RequestFactory
      */
     public function createJobCalculationRequest(array $query) : RequestInterface
     {
-        $uri = \GuzzleHttp\Psr7\uri_for('/api/v2/jobs/calculate.json')->withQuery($query);
+        $queryString = \GuzzleHttp\Psr7\build_query($query);
+        $uri = \GuzzleHttp\Psr7\uri_for('/api/v2/jobs/calculate.json')->withQuery($queryString);
         $request = $this->createRequest('get', $uri);
         return $this->authenticateRequest($request);
     }
